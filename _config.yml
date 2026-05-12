@@ -3,10 +3,10 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Shihao的博客
-subtitle: 'Computer Vision / Image Matching / Efficient Transformers'
-description: 'Shi Hao 的个人博客，记录计算机视觉、图像匹配、特征提取、Transformer 效率优化与工程实践。'
-keywords: Computer Vision, Image Matching, Feature Extraction, Transformer, Token Routing, Hexo, Butterfly
+title: Shihao
+subtitle: 'Backend / Agent Development / Engineering Notes'
+description: 'Shi Hao 的个人网站，整理后端开发、Agent 项目、学习笔记、学校协作项目和未来技术探索。'
+keywords: Backend, Agent Development, Java, LLM, Engineering Notes, Hexo, Butterfly
 author: Shi Hao
 language: zh-CN
 timezone: 'Asia/Shanghai'
@@ -60,7 +60,7 @@ prismjs:
 # per_page: Posts displayed per page. (0 = disable pagination)
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
-  path: ''
+  path: blog
   per_page: 10
   order_by: -date
 

@@ -19,10 +19,10 @@ nav:
 
 menu:
   Home: / || fas fa-home
-  Archives: /archives/ || fas fa-archive
-  Tags: /tags/ || fas fa-tags
-  Categories: /categories/ || fas fa-folder-open
   About: /about/ || fas fa-user
+  Project: /projects/ || fas fa-layer-group
+  Blog: /blog/ || fas fa-pen-nib
+  Interesting Work: /interesting-work/ || fas fa-lightbulb
   GitHub: https://github.com/Zhshao11 || fab fa-github
 
 # --------------------------------------
@@ -167,11 +167,11 @@ subtitle:
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
-    - Computer Vision
-    - Image Matching
-    - Feature Extraction
-    - Efficient Transformer
-    - Token Routing
+    - Backend Development
+    - Agent Engineering
+    - Java Projects
+    - Learning Notes
+    - Future Lab
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -291,7 +291,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description: Computer Vision / Image Matching / Efficient Transformers
+    description: Backend / Agent Development / Engineering Notes
     button:
       enable: true
       icon: fab fa-github
@@ -299,7 +299,7 @@ aside:
       link: https://github.com/Zhshao11
   card_announcement:
     enable: true
-    content: 记录计算机视觉、图像匹配、特征提取与轻量化 Transformer 的研究和工程实践。
+    content: 主页整理学习笔记、Agent/Java 项目、学校协作项目和未来技术探索。
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -1065,7 +1065,7 @@ css_prefix: true
 # Insert the code to head (before '</head>' tag) and the bottom (before '</body>' tag)
 inject:
   head:
-    # - <link rel="stylesheet" href="/xxx.css">
+    - <link rel="stylesheet" href="/css/portfolio.css">
   bottom:
     # - <script src="xxxx"></script>
 

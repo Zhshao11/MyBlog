@@ -1,0 +1,402 @@
+/* 页面总容器：控制自定义作品集页面的最大宽度和基础文本颜色。 */
+.portfolio-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  color: var(--font-color);
+}
+
+/* 链接基础样式：去掉默认下划线，让卡片和按钮的交互更接近作品集模板。 */
+.portfolio-shell a {
+  text-decoration: none;
+}
+
+/* Hero 首屏模块：负责主页/子页面顶部的大块介绍区域，使用网格背景和双栏布局。 */
+.pf-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 24px;
+  overflow: hidden;
+  padding: 42px;
+  border: 1px solid rgba(28, 31, 39, 0.1);
+  border-radius: 8px;
+  background:
+    linear-gradient(90deg, rgba(27, 36, 48, 0.04) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(27, 36, 48, 0.04) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(242, 245, 248, 0.94));
+  background-size: 28px 28px, 28px 28px, auto;
+}
+
+/* 紧凑 Hero：About、Project、Interesting Work 页面只需要单栏介绍时使用。 */
+.pf-hero-compact {
+  grid-template-columns: 1fr;
+}
+
+/* 小标题样式：用于 Portfolio、Preview、Radar 等分区标签。 */
+.pf-eyebrow {
+  margin: 0 0 10px;
+  color: #4c7f68;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+/* Hero 主标题：控制首页最重要的身份定位文本。 */
+.pf-hero h1 {
+  margin: 0;
+  max-width: 760px;
+  font-size: clamp(2.1rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+/* Hero 描述文本：解释当前页面的用途，保证第一屏信息清晰。 */
+.pf-lead {
+  margin: 18px 0 0;
+  max-width: 740px;
+  color: var(--font-color);
+  font-size: 1.02rem;
+  line-height: 1.8;
+  opacity: 0.82;
+}
+
+/* 按钮组：用于主页首屏的 Projects、Blog、GitHub 等主要入口。 */
+.pf-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+/* 通用按钮样式：提供轻量边框、背景和 hover 动效。 */
+.pf-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 16px;
+  border: 1px solid rgba(28, 31, 39, 0.16);
+  border-radius: 8px;
+  color: var(--font-color);
+  background: rgba(255, 255, 255, 0.76);
+  font-weight: 700;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* 通用 hover 交互：按钮、可点击卡片、项目卡片悬浮时轻微上浮。 */
+.pf-button:hover,
+.pf-link-card:hover,
+.pf-project-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(76, 127, 104, 0.42);
+  box-shadow: 0 14px 36px rgba(21, 28, 40, 0.1);
+}
+
+/* 主按钮样式：用于最重要的行动入口，例如 View Projects。 */
+.pf-button-primary {
+  color: #fff;
+  border-color: #1f3d34;
+  background: #1f3d34;
+}
+
+/* Hero 右侧信息面板：主页中展示 Site Map 的卡片区域。 */
+.pf-hero-panel {
+  align-self: stretch;
+  padding: 22px;
+  border: 1px solid rgba(28, 31, 39, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+/* 标题重置：统一各模块标题的默认间距和字距。 */
+.pf-hero-panel h2,
+.pf-section-head h2,
+.pf-card h3,
+.pf-resume-item h3 {
+  margin: 0;
+  letter-spacing: 0;
+}
+
+/* 状态标签：用于 Now Organizing、Agent、Java、Planned 等小型状态标识。 */
+.pf-status,
+.pf-tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 26px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: #1f3d34;
+  background: rgba(76, 127, 104, 0.12);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* 无序信息列表：用于首页右侧 Site Map 的编号说明。 */
+.pf-clean-list {
+  margin: 18px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pf-clean-list li {
+  display: flex;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(28, 31, 39, 0.08);
+  line-height: 1.55;
+}
+
+.pf-clean-list li:last-child {
+  border-bottom: 0;
+}
+
+/* 编号样式：统一列表编号、卡片编号、时间线编号和简历模块编号。 */
+.pf-clean-list span,
+.pf-card-index,
+.pf-timeline span,
+.pf-resume-item > span {
+  color: #a15d27;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+/* 内容分区：每个大模块之间保留统一垂直间距。 */
+.pf-section {
+  margin-top: 34px;
+}
+
+/* 分区标题：每个模块开头的 eyebrow + h2 组合。 */
+.pf-section-head {
+  margin-bottom: 16px;
+}
+
+/* 网格系统：控制功能入口、项目卡片、兴趣卡片等布局。 */
+.pf-grid {
+  display: grid;
+  gap: 16px;
+}
+
+/* 四列网格：主页四个功能入口使用。 */
+.pf-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+/* 三列网格：精选方向和技术兴趣卡片使用。 */
+.pf-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* 两列网格：About 概览、项目卡片和主页分栏模块使用。 */
+.pf-grid-2,
+.pf-split {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* 通用卡片：所有内容卡片的基础外观，包含边框、背景、圆角和过渡动效。 */
+.pf-card {
+  display: block;
+  min-height: 100%;
+  padding: 22px;
+  border: 1px solid rgba(28, 31, 39, 0.1);
+  border-radius: 8px;
+  color: var(--font-color);
+  background: rgba(255, 255, 255, 0.72);
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+/* 卡片标题与正文：控制卡片内部信息密度，避免内容显得杂乱。 */
+.pf-card h3 {
+  margin-top: 12px;
+  font-size: 1.1rem;
+}
+
+.pf-card p {
+  margin: 12px 0 0;
+  color: var(--font-color);
+  line-height: 1.75;
+  opacity: 0.76;
+}
+
+/* 卡片顶部栏：用于标签和状态左右分布。 */
+.pf-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* 弱化文本：用于 Backend、To Fill、Protected 等辅助状态。 */
+.pf-muted {
+  color: var(--font-color);
+  font-size: 0.78rem;
+  opacity: 0.58;
+}
+
+/* 项目页锚点导航：提供分类跳转，不引入复杂 JavaScript。 */
+.pf-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 22px 0 0;
+}
+
+.pf-filter-bar a {
+  padding: 8px 12px;
+  border: 1px solid rgba(28, 31, 39, 0.12);
+  border-radius: 8px;
+  color: var(--font-color);
+  background: rgba(255, 255, 255, 0.72);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+/* 技术栈标签：用于项目卡片底部展示 Java、Spring Boot、RAG 等关键词。 */
+.pf-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.pf-stack span {
+  padding: 5px 9px;
+  border: 1px solid rgba(28, 31, 39, 0.1);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  opacity: 0.72;
+}
+
+/* 分栏区域：主页 Blog Snapshot 和 Roadmap 的左右布局。 */
+.pf-split {
+  display: grid;
+  gap: 18px;
+}
+
+/* 时间线模块：用于展示下一步更新计划和构建路线图。 */
+.pf-timeline {
+  display: grid;
+  gap: 12px;
+}
+
+/* 时间线与简历条目：统一带编号的横向信息块。 */
+.pf-timeline div,
+.pf-resume-item {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid rgba(28, 31, 39, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.pf-timeline p,
+.pf-resume-item p {
+  margin: 0;
+  line-height: 1.75;
+  opacity: 0.78;
+}
+
+/* 宽时间线：Interesting Work 页面中两列展示 Roadmap。 */
+.pf-timeline-wide {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* 简历列表：About 页面中 Education、Projects、Skills、Contact 的纵向列表。 */
+.pf-resume-list {
+  display: grid;
+  gap: 12px;
+}
+
+/* 折叠详情模块：用于项目写作模板和 Interesting Work 的补充说明。 */
+.pf-details {
+  border: 1px solid rgba(28, 31, 39, 0.1);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.pf-details summary {
+  cursor: pointer;
+  padding: 18px 20px;
+  font-weight: 800;
+}
+
+.pf-details-body {
+  padding: 0 20px 20px;
+}
+
+.pf-details-body p {
+  margin: 10px 0 0;
+  line-height: 1.75;
+}
+
+/* 深色模式：适配 Butterfly 的暗色主题，避免自定义卡片在暗色下突兀。 */
+html[data-theme='dark'] .pf-hero {
+  border-color: rgba(255, 255, 255, 0.1);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(0deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(135deg, rgba(28, 32, 38, 0.98), rgba(20, 24, 29, 0.96));
+  background-size: 28px 28px, 28px 28px, auto;
+}
+
+html[data-theme='dark'] .pf-card,
+html[data-theme='dark'] .pf-hero-panel,
+html[data-theme='dark'] .pf-filter-bar a,
+html[data-theme='dark'] .pf-timeline div,
+html[data-theme='dark'] .pf-resume-item,
+html[data-theme='dark'] .pf-details,
+html[data-theme='dark'] .pf-button {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(28, 32, 38, 0.76);
+}
+
+html[data-theme='dark'] .pf-button-primary {
+  border-color: #6ea489;
+  background: #2f6b55;
+}
+
+html[data-theme='dark'] .pf-eyebrow,
+html[data-theme='dark'] .pf-status,
+html[data-theme='dark'] .pf-tag {
+  color: #9bd3b5;
+}
+
+/* 响应式布局：平板和手机上把多列布局折叠为单列，保证内容清晰可读。 */
+@media (max-width: 900px) {
+  .pf-hero,
+  .pf-grid-4,
+  .pf-grid-3,
+  .pf-grid-2,
+  .pf-split,
+  .pf-timeline-wide {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-hero {
+    padding: 28px;
+  }
+}
+
+/* 小屏优化：手机端收紧 Hero 尺寸，并让按钮占满宽度便于点击。 */
+@media (max-width: 560px) {
+  .pf-hero {
+    padding: 22px;
+  }
+
+  .pf-hero h1 {
+    font-size: 2rem;
+  }
+
+  .pf-button {
+    width: 100%;
+  }
+
+  .pf-timeline div,
+  .pf-resume-item {
+    grid-template-columns: 1fr;
+  }
+}
